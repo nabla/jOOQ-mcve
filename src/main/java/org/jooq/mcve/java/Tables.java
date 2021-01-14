@@ -4,17 +4,29 @@
 package org.jooq.mcve.java;
 
 
+import org.jooq.mcve.java.tables.Experience;
+import org.jooq.mcve.java.tables.Message;
 import org.jooq.mcve.java.tables.Test;
 
 
 /**
- * Convenience access to all tables in MCVE.
+ * Convenience access to all tables in mcve.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
 
     /**
-     * The table <code>MCVE.TEST</code>.
+     * The table <code>mcve.experience</code>.
+     */
+    public static final Experience EXPERIENCE = Experience.EXPERIENCE;
+
+    /**
+     * The table <code>mcve.message</code>.
+     */
+    public static final Message MESSAGE = Message.MESSAGE;
+
+    /**
+     * The table <code>mcve.test</code>.
      */
     public static final Test TEST = Test.TEST;
 }

@@ -22,7 +22,7 @@ import org.jooq.impl.Internal
 import org.jooq.impl.SQLDataType
 import org.jooq.impl.TableImpl
 import org.jooq.mcve.kotlin.Mcve
-import org.jooq.mcve.kotlin.keys.PK_TEST
+import org.jooq.mcve.kotlin.keys.TEST_PKEY
 import org.jooq.mcve.kotlin.tables.records.TestRecord
 
 
@@ -49,7 +49,7 @@ open class Test(
     companion object {
 
         /**
-         * The reference instance of <code>MCVE.TEST</code>
+         * The reference instance of <code>mcve.test</code>
          */
         val TEST = Test()
     }
@@ -60,38 +60,38 @@ open class Test(
     override fun getRecordType(): Class<TestRecord> = TestRecord::class.java
 
     /**
-     * The column <code>MCVE.TEST.ID</code>.
+     * The column <code>mcve.test.id</code>.
      */
-    val ID: TableField<TestRecord, Int?> = createField(DSL.name("ID"), SQLDataType.INTEGER.nullable(false).identity(true), this, "")
+    val ID: TableField<TestRecord, Int?> = createField(DSL.name("id"), SQLDataType.INTEGER.nullable(false).identity(true), this, "")
 
     /**
-     * The column <code>MCVE.TEST.VALUE</code>.
+     * The column <code>mcve.test.value</code>.
      */
-    val VALUE: TableField<TestRecord, Int?> = createField(DSL.name("VALUE"), SQLDataType.INTEGER, this, "")
+    val VALUE: TableField<TestRecord, Int?> = createField(DSL.name("value"), SQLDataType.INTEGER, this, "")
 
     private constructor(alias: Name, aliased: Table<TestRecord>?): this(alias, null, null, aliased, null)
     private constructor(alias: Name, aliased: Table<TestRecord>?, parameters: Array<Field<*>?>?): this(alias, null, null, aliased, parameters)
 
     /**
-     * Create an aliased <code>MCVE.TEST</code> table reference
+     * Create an aliased <code>mcve.test</code> table reference
      */
     constructor(alias: String): this(DSL.name(alias))
 
     /**
-     * Create an aliased <code>MCVE.TEST</code> table reference
+     * Create an aliased <code>mcve.test</code> table reference
      */
     constructor(alias: Name): this(alias, null)
 
     /**
-     * Create a <code>MCVE.TEST</code> table reference
+     * Create a <code>mcve.test</code> table reference
      */
-    constructor(): this(DSL.name("TEST"), null)
+    constructor(): this(DSL.name("test"), null)
 
     constructor(child: Table<out Record>, key: ForeignKey<out Record, TestRecord>): this(Internal.createPathAlias(child, key), child, key, TEST, null)
     override fun getSchema(): Schema = Mcve.MCVE
     override fun getIdentity(): Identity<TestRecord, Int?> = super.getIdentity() as Identity<TestRecord, Int?>
-    override fun getPrimaryKey(): UniqueKey<TestRecord> = PK_TEST
-    override fun getKeys(): List<UniqueKey<TestRecord>> = listOf(PK_TEST)
+    override fun getPrimaryKey(): UniqueKey<TestRecord> = TEST_PKEY
+    override fun getKeys(): List<UniqueKey<TestRecord>> = listOf(TEST_PKEY)
     override fun `as`(alias: String): Test = Test(DSL.name(alias), this)
     override fun `as`(alias: Name): Test = Test(alias, this)
 

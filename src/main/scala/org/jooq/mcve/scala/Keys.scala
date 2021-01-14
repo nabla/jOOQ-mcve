@@ -8,13 +8,17 @@ import org.jooq.TableField
 import org.jooq.UniqueKey
 import org.jooq.impl.DSL
 import org.jooq.impl.Internal
+import org.jooq.mcve.scala.tables.Experience
+import org.jooq.mcve.scala.tables.Message
 import org.jooq.mcve.scala.tables.Test
+import org.jooq.mcve.scala.tables.records.ExperienceRecord
+import org.jooq.mcve.scala.tables.records.MessageRecord
 import org.jooq.mcve.scala.tables.records.TestRecord
 
 
 /**
  * A class modelling foreign key relationships and constraints of tables in 
- * MCVE.
+ * mcve.
  */
 object Keys {
 
@@ -22,5 +26,7 @@ object Keys {
   // UNIQUE and PRIMARY KEY definitions
   // -------------------------------------------------------------------------
 
-  val PK_TEST: UniqueKey[TestRecord] = Internal.createUniqueKey(Test.TEST, DSL.name("PK_TEST"), Array(Test.TEST.ID).asInstanceOf[Array[TableField[TestRecord, _] ] ], true)
+  val EXPERIENCE_PKEY: UniqueKey[ExperienceRecord] = Internal.createUniqueKey(Experience.EXPERIENCE, DSL.name("experience_pkey"), Array(Experience.EXPERIENCE.ID).asInstanceOf[Array[TableField[ExperienceRecord, _] ] ], true)
+  val MESSAGE_PKEY: UniqueKey[MessageRecord] = Internal.createUniqueKey(Message.MESSAGE, DSL.name("message_pkey"), Array(Message.MESSAGE.ID).asInstanceOf[Array[TableField[MessageRecord, _] ] ], true)
+  val TEST_PKEY: UniqueKey[TestRecord] = Internal.createUniqueKey(Test.TEST, DSL.name("test_pkey"), Array(Test.TEST.ID).asInstanceOf[Array[TableField[TestRecord, _] ] ], true)
 }

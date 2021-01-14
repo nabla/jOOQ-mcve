@@ -4,11 +4,23 @@
 package org.jooq.mcve.kotlin.tables.references
 
 
+import org.jooq.mcve.kotlin.tables.Experience
+import org.jooq.mcve.kotlin.tables.Message
 import org.jooq.mcve.kotlin.tables.Test
 
 
 
 /**
- * The table <code>MCVE.TEST</code>.
+ * The table <code>mcve.experience</code>.
+ */
+val EXPERIENCE = Experience.EXPERIENCE
+
+/**
+ * The table <code>mcve.message</code>.
+ */
+val MESSAGE = Message.MESSAGE
+
+/**
+ * The table <code>mcve.test</code>.
  */
 val TEST = Test.TEST

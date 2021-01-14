@@ -21,28 +21,28 @@ public class TestRecord extends UpdatableRecordImpl<TestRecord> implements Recor
     private static final long serialVersionUID = 1L;
 
     /**
-     * Setter for <code>MCVE.TEST.ID</code>.
+     * Setter for <code>mcve.test.id</code>.
      */
     public void setId(Integer value) {
         set(0, value);
     }
 
     /**
-     * Getter for <code>MCVE.TEST.ID</code>.
+     * Getter for <code>mcve.test.id</code>.
      */
     public Integer getId() {
         return (Integer) get(0);
     }
 
     /**
-     * Setter for <code>MCVE.TEST.VALUE</code>.
+     * Setter for <code>mcve.test.value</code>.
      */
     public void setValue(Integer value) {
         set(1, value);
     }
 
     /**
-     * Getter for <code>MCVE.TEST.VALUE</code>.
+     * Getter for <code>mcve.test.value</code>.
      */
     public Integer getValue() {
         return (Integer) get(1);

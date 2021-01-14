@@ -8,13 +8,17 @@ import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
 import org.jooq.impl.Internal;
+import org.jooq.mcve.java.tables.Experience;
+import org.jooq.mcve.java.tables.Message;
 import org.jooq.mcve.java.tables.Test;
+import org.jooq.mcve.java.tables.records.ExperienceRecord;
+import org.jooq.mcve.java.tables.records.MessageRecord;
 import org.jooq.mcve.java.tables.records.TestRecord;
 
 
 /**
  * A class modelling foreign key relationships and constraints of tables in 
- * MCVE.
+ * mcve.
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Keys {
@@ -23,5 +27,7 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
-    public static final UniqueKey<TestRecord> PK_TEST = Internal.createUniqueKey(Test.TEST, DSL.name("PK_TEST"), new TableField[] { Test.TEST.ID }, true);
+    public static final UniqueKey<ExperienceRecord> EXPERIENCE_PKEY = Internal.createUniqueKey(Experience.EXPERIENCE, DSL.name("experience_pkey"), new TableField[] { Experience.EXPERIENCE.ID }, true);
+    public static final UniqueKey<MessageRecord> MESSAGE_PKEY = Internal.createUniqueKey(Message.MESSAGE, DSL.name("message_pkey"), new TableField[] { Message.MESSAGE.ID }, true);
+    public static final UniqueKey<TestRecord> TEST_PKEY = Internal.createUniqueKey(Test.TEST, DSL.name("test_pkey"), new TableField[] { Test.TEST.ID }, true);
 }

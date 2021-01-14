@@ -35,7 +35,7 @@ import scala.Array
 object Test {
 
   /**
-   * The reference instance of <code>MCVE.TEST</code>
+   * The reference instance of <code>mcve.test</code>
    */
   val TEST = new Test
 }
@@ -67,31 +67,31 @@ extends TableImpl[TestRecord](
   override def getRecordType: Class[TestRecord] = classOf[TestRecord]
 
   /**
-   * The column <code>MCVE.TEST.ID</code>.
+   * The column <code>mcve.test.id</code>.
    */
-  val ID: TableField[TestRecord, Integer] = createField(DSL.name("ID"), SQLDataType.INTEGER.nullable(false).identity(true), "")
+  val ID: TableField[TestRecord, Integer] = createField(DSL.name("id"), SQLDataType.INTEGER.nullable(false).identity(true), "")
 
   /**
-   * The column <code>MCVE.TEST.VALUE</code>.
+   * The column <code>mcve.test.value</code>.
    */
-  val VALUE: TableField[TestRecord, Integer] = createField(DSL.name("VALUE"), SQLDataType.INTEGER, "")
+  val VALUE: TableField[TestRecord, Integer] = createField(DSL.name("value"), SQLDataType.INTEGER, "")
 
   private def this(alias: Name, aliased: Table[TestRecord]) = this(alias, null, null, aliased, null)
 
   /**
-   * Create an aliased <code>MCVE.TEST</code> table reference
+   * Create an aliased <code>mcve.test</code> table reference
    */
   def this(alias: String) = this(DSL.name(alias), org.jooq.mcve.scala.tables.Test.TEST)
 
   /**
-   * Create an aliased <code>MCVE.TEST</code> table reference
+   * Create an aliased <code>mcve.test</code> table reference
    */
   def this(alias: Name) = this(alias, org.jooq.mcve.scala.tables.Test.TEST)
 
   /**
-   * Create a <code>MCVE.TEST</code> table reference
+   * Create a <code>mcve.test</code> table reference
    */
-  def this() = this(DSL.name("TEST"), null)
+  def this() = this(DSL.name("test"), null)
 
   def this(child: Table[_ <: Record], key: ForeignKey[_ <: Record, TestRecord]) = this(Internal.createPathAlias(child, key), child, key, org.jooq.mcve.scala.tables.Test.TEST, null)
 
@@ -99,9 +99,9 @@ extends TableImpl[TestRecord](
 
   override def getIdentity: Identity[TestRecord, Integer] = super.getIdentity.asInstanceOf[ Identity[TestRecord, Integer] ]
 
-  override def getPrimaryKey: UniqueKey[TestRecord] = Keys.PK_TEST
+  override def getPrimaryKey: UniqueKey[TestRecord] = Keys.TEST_PKEY
 
-  override def getKeys: List[ UniqueKey[TestRecord] ] = Arrays.asList[ UniqueKey[TestRecord] ](Keys.PK_TEST)
+  override def getKeys: List[ UniqueKey[TestRecord] ] = Arrays.asList[ UniqueKey[TestRecord] ](Keys.TEST_PKEY)
   override def as(alias: String): Test = new Test(DSL.name(alias), this)
   override def as(alias: Name): Test = new Test(alias, this)
 

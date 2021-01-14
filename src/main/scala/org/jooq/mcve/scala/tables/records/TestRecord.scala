@@ -20,28 +20,28 @@ import org.jooq.mcve.scala.tables.Test
 class TestRecord extends UpdatableRecordImpl[TestRecord](Test.TEST) with Record2[Integer, Integer] {
 
   /**
-   * Setter for <code>MCVE.TEST.ID</code>.
+   * Setter for <code>mcve.test.id</code>.
    */
   def setId(value: Integer): Unit = {
     set(0, value)
   }
 
   /**
-   * Getter for <code>MCVE.TEST.ID</code>.
+   * Getter for <code>mcve.test.id</code>.
    */
-  def getId(): Integer = get(0).asInstanceOf[Integer]
+  def getId: Integer = get(0).asInstanceOf[Integer]
 
   /**
-   * Setter for <code>MCVE.TEST.VALUE</code>.
+   * Setter for <code>mcve.test.value</code>.
    */
   def setValue(value: Integer): Unit = {
     set(1, value)
   }
 
   /**
-   * Getter for <code>MCVE.TEST.VALUE</code>.
+   * Getter for <code>mcve.test.value</code>.
    */
-  def getValue(): Integer = get(1).asInstanceOf[Integer]
+  def getValue: Integer = get(1).asInstanceOf[Integer]
 
   // -------------------------------------------------------------------------
   // Primary key information

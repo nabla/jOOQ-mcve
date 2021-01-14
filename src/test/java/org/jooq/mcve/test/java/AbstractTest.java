@@ -15,7 +15,7 @@ public abstract class AbstractTest {
 
     @Before
     public void setup() throws Exception {
-        connection = DriverManager.getConnection("jdbc:h2:~/mcve", "sa", "");
+        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/mcve", "arthur", "");
         ctx = DSL.using(connection);
     }
 

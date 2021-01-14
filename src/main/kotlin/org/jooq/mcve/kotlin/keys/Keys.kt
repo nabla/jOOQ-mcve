@@ -7,7 +7,11 @@ package org.jooq.mcve.kotlin.keys
 import org.jooq.UniqueKey
 import org.jooq.impl.DSL
 import org.jooq.impl.Internal
+import org.jooq.mcve.kotlin.tables.Experience
+import org.jooq.mcve.kotlin.tables.Message
 import org.jooq.mcve.kotlin.tables.Test
+import org.jooq.mcve.kotlin.tables.records.ExperienceRecord
+import org.jooq.mcve.kotlin.tables.records.MessageRecord
 import org.jooq.mcve.kotlin.tables.records.TestRecord
 
 
@@ -16,4 +20,6 @@ import org.jooq.mcve.kotlin.tables.records.TestRecord
 // UNIQUE and PRIMARY KEY definitions
 // -------------------------------------------------------------------------
 
-val PK_TEST: UniqueKey<TestRecord> = Internal.createUniqueKey(Test.TEST, DSL.name("PK_TEST"), arrayOf(Test.TEST.ID), true)
+val EXPERIENCE_PKEY: UniqueKey<ExperienceRecord> = Internal.createUniqueKey(Experience.EXPERIENCE, DSL.name("experience_pkey"), arrayOf(Experience.EXPERIENCE.ID), true)
+val MESSAGE_PKEY: UniqueKey<MessageRecord> = Internal.createUniqueKey(Message.MESSAGE, DSL.name("message_pkey"), arrayOf(Message.MESSAGE.ID), true)
+val TEST_PKEY: UniqueKey<TestRecord> = Internal.createUniqueKey(Test.TEST, DSL.name("test_pkey"), arrayOf(Test.TEST.ID), true)

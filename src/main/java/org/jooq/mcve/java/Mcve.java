@@ -8,8 +8,11 @@ import java.util.Arrays;
 import java.util.List;
 
 import org.jooq.Catalog;
+import org.jooq.Sequence;
 import org.jooq.Table;
 import org.jooq.impl.SchemaImpl;
+import org.jooq.mcve.java.tables.Experience;
+import org.jooq.mcve.java.tables.Message;
 import org.jooq.mcve.java.tables.Test;
 
 
@@ -22,12 +25,22 @@ public class Mcve extends SchemaImpl {
     private static final long serialVersionUID = 1L;
 
     /**
-     * The reference instance of <code>MCVE</code>
+     * The reference instance of <code>mcve</code>
      */
     public static final Mcve MCVE = new Mcve();
 
     /**
-     * The table <code>MCVE.TEST</code>.
+     * The table <code>mcve.experience</code>.
+     */
+    public final Experience EXPERIENCE = Experience.EXPERIENCE;
+
+    /**
+     * The table <code>mcve.message</code>.
+     */
+    public final Message MESSAGE = Message.MESSAGE;
+
+    /**
+     * The table <code>mcve.test</code>.
      */
     public final Test TEST = Test.TEST;
 
@@ -35,7 +48,7 @@ public class Mcve extends SchemaImpl {
      * No further instances allowed
      */
     private Mcve() {
-        super("MCVE", null);
+        super("mcve", null);
     }
 
 
@@ -45,8 +58,18 @@ public class Mcve extends SchemaImpl {
     }
 
     @Override
+    public final List<Sequence<?>> getSequences() {
+        return Arrays.<Sequence<?>>asList(
+            Sequences.EXPERIENCE_ID_SEQ,
+            Sequences.MESSAGE_ID_SEQ,
+            Sequences.TEST_ID_SEQ);
+    }
+
+    @Override
     public final List<Table<?>> getTables() {
         return Arrays.<Table<?>>asList(
+            Experience.EXPERIENCE,
+            Message.MESSAGE,
             Test.TEST);
     }
 }
